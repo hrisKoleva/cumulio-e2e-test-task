@@ -32,7 +32,7 @@ test('Email format is verified', async ({ page }) => {
   await loginEmail.fill(email1);
   await password.fill(password1);
 
-  console.log(RegExp.apply(email1));
+  await expect(page.getByRole('button', { name: 'Log in' }));
 });
 
 /* this fails, first looks says it uses the PW Library and maybe because it tries to open a whole new page. Will leave it as it is. The test is apparently to check if the link works
