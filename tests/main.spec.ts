@@ -48,3 +48,16 @@ test('Sign up page is opened on Sign up now! link click', async ({ page }) => {
     /Try Embedded Analytics | Free 10-day Cumul.io Trial/
   );
 });*/
+
+//I'll a bit more practice to figure out all the idiosyncrasies of the framework, so here's what needs to be tested:
+// 1. all elements on the page are visible and accessible - clickable, hoverable, tooltips are shown and fully visible
+// 2. when an element is clickable, and clicked, there must be an output from the action
+// 3. all links work and lead to another page, frame
+// 4. all fields accept values and have proper validation
+// 5. login form works as defined
+// 6. forgot password flow is working (btw, I didn't receive the reset parssword email)
+// 7. the sign-up flow, including email validation if required.
+// 8. test the Home screen after Sign-Up (btw, I had a problem with popup that was not able to close - it asked if I wanted a new dashboard or something else)
+// 9. test login, signup flows for the two storage centers independently
+// 10. verify login and create my account, respectfully on the login and signup pages are not enabled until the required fields are filled/checked
+// 11. etc.
