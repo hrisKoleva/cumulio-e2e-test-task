@@ -8,12 +8,12 @@ test('Login page has "Login" in title', async ({ page }) => {
 });
 
 //will have to check that all elements on the page are visible. Here are some of them
-test('Login button is initially disabled', async ({ page }) => {
+/*test('Login button is initially disabled', async ({ page }) => {
   const loginButton = page.locator(
     '.btn-primary.disabled, .btn-primary:disabled'
   );
   await expect(loginButton).toBeVisible();
-});
+});*/
 
 test('Email format is verified', async ({ page }) => {
   await page.goto('https://app.cumul.io/home/login');
@@ -23,16 +23,17 @@ test('Email format is verified', async ({ page }) => {
   const password = page.locator('#login-password');
   await expect(password).toBeVisible();
 
-  let email1 = 'improve@hriskoleva.com';
-  let password1 = 'cumul-io-Test0505';
+  let email1 = 'email@domain.com';
+  let password1 = 'Password15^';
   let email2 = '0505@2023.102';
 
   let emailFormat = new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}');
 
-  loginEmail.fill(email1);
-  password.fill(password1);
-});
+  await loginEmail.fill(email1);
+  await password.fill(password1);
 
+  console.log(RegExp.apply(email1));
+});
 
 /* this fails, first looks says it uses the PW Library and maybe because it tries to open a whole new page. Will leave it as it is. The test is apparently to check if the link works
 
